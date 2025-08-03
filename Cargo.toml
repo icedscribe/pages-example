@@ -1,0 +1,18 @@
+[package]
+name = "pages"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+iced = "0.13.1"
+webbrowser = "1.0.5"
+
+[workspace.package.release]
+opt-level = "z"
+lto = "fat"
+debug = true
+codegen-units = 1
+panic = 'abort'
+strip = true
+debug-assertions = false
+overflow-checks = false
