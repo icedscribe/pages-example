@@ -1,6 +1,6 @@
 use iced::{
-    Alignment, Element, Length,
     widget::{button, column, text},
+    Alignment, Element, Length,
 };
 
 #[derive(Debug, Clone, Copy)]
@@ -12,7 +12,7 @@ pub enum AboutMessage {
 #[derive(Debug, Default)]
 pub struct AboutPage;
 
-const REPOSITORY: &str = "https://github.com/progzone122/iced-pages";
+const REPOSITORY: &str = "https://github.com/icedscribe/pages-example";
 
 impl AboutPage {
     pub fn update(&mut self, message: AboutMessage) -> Option<AboutMessage> {
