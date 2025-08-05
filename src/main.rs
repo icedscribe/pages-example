@@ -1,7 +1,7 @@
 mod pages;
 
 use iced::widget::{column, container, text};
-use iced::{Background, Color, Element, Size, Task};
+use iced::{Background, Color, Element, Size};
 
 use pages::about::{AboutMessage, AboutPage};
 use pages::home::{HomeMessage, HomePage};
@@ -29,10 +29,6 @@ enum Message {
 }
 
 impl App {
-    fn new() -> (Self, Task<Message>) {
-        (Self::default(), Task::none())
-    }
-
     fn update(app: &mut Self, message: Message) {
         match (&mut app.page, message) {
             (Page::Home(page), Message::Home(msg)) => {
@@ -72,5 +68,5 @@ impl App {
 fn main() -> iced::Result {
     iced::application("Pages", App::update, App::view)
         .window_size(Size::new(300.0, 600.0))
-        .run_with(App::new)
+        .run()
 }
